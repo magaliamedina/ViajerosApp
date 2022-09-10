@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ViajerosApp.Migrations
 {
-    public partial class CreateTables : Migration
+    public partial class createTables : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -103,6 +103,17 @@ namespace ViajerosApp.Migrations
                         principalTable: "Viajeros",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "Ciudades",
+                columns: new[] { "ID", "Nombre" },
+                values: new object[,]
+                {
+                    { 1, "Corrientes" },
+                    { 2, "Buenos Aires" },
+                    { 3, "Mendoza" },
+                    { 4, "Misiones" }
                 });
 
             migrationBuilder.InsertData(

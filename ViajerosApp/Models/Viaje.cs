@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using ViajerosApp.DTO;
 
 namespace ViajerosApp.Models
 {

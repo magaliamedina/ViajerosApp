@@ -22,9 +22,9 @@ namespace ViajerosApp.Services
             {
                 Viaje viaje = new Viaje()
                 {
-                    ViajeroID = viajeDTO.ViajeroID,
+                    Viajero = viajeDTO.Viajero,
                     CiudadID = viajeDTO.CiudadID,
-                    VehiculoID = viajeDTO.VehiculoID,
+                    Vehiculo = viajeDTO.Vehiculo,
                     Fecha= viajeDTO.Fecha,
                     CantidadDias= viajeDTO.CantidadDias              
                 };
@@ -53,9 +53,9 @@ namespace ViajerosApp.Services
             var viajeAnterior = _viajeRepository.GetById(Id);
             if (viajeAnterior != null)
             {
-                viajeAnterior.ViajeroID = viajeDTO.ViajeroID;
+                viajeAnterior.Viajero = viajeDTO.Viajero;
                 viajeAnterior.CiudadID = viajeDTO.CiudadID;
-                viajeAnterior.VehiculoID = viajeDTO.VehiculoID;
+                viajeAnterior.Vehiculo = viajeDTO.Vehiculo;
                 viajeAnterior.Fecha = viajeDTO.Fecha;
                 viajeAnterior.CantidadDias = viajeDTO.CantidadDias;
                 try
@@ -70,10 +70,10 @@ namespace ViajerosApp.Services
             return null;
         }
 
-        public IEnumerable<ViajeDTO> GetAll()
+        public IEnumerable<ListViajeDTO> GetAll()
         {
             var viaje = _viajeRepository.GetAll();
-            return _mapper.Map<IEnumerable<ViajeDTO>>(viaje);
+            return _mapper.Map<IEnumerable<ListViajeDTO>>(viaje);
         }
 
         public List<Viaje> GetByCiudadDestinoID(int ciudadID)

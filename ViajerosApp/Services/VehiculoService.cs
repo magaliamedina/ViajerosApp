@@ -22,9 +22,9 @@ namespace ViajerosApp.Services
             {
                 Vehiculo vehiculo = new Vehiculo()
                 {
+                    TipoVehiculoID = vehiculoDTO.TipoVehiculoID,
                     Patente = vehiculoDTO.Patente,
                     Marca = vehiculoDTO.Marca,
-                    TipoVehiculoID = vehiculoDTO.TipoVehiculoID
                 };
                 _vehiculoRepository.Add(vehiculo);
             }
@@ -66,11 +66,12 @@ namespace ViajerosApp.Services
             return null;
         }
 
-        public IEnumerable<VehiculoDTO> GetAll()
+        public IEnumerable<Vehiculo> GetAll()
         {
             var vehiculos = _vehiculoRepository.GetAll();
-            var vehiculoReturn =_mapper.Map<IEnumerable<VehiculoDTO>>(vehiculos);
-            return vehiculoReturn;
+            //var vehiculoReturn =_mapper.Map<IEnumerable<VehiculoDTO>>(vehiculos);
+            // return vehiculoReturn;
+            return vehiculos;
         }
     }
 }

@@ -15,7 +15,12 @@ namespace ViajerosApp.Extensions
             CreateMap<Vehiculo, VehiculoDTO>();
 
             CreateMap<ViajeDTO, Viaje>();
+            CreateMap<ViajeDTO, ListViajeDTO>();
             CreateMap<Viaje, ViajeDTO>();
+            CreateMap<Viaje, ListViajeDTO>();
+            CreateMap<ListViajeDTO, ViajeDTO>();
+            CreateMap<ListViajeDTO, Viaje>();
+
 
             CreateMap<ViajeroDTO, Viajero>();
             CreateMap<Viajero, ViajeroDTO>();

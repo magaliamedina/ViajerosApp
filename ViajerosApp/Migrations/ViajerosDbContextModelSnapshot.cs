@@ -36,7 +36,29 @@ namespace ViajerosApp.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Ciudades");
+                    b.ToTable("Ciudades", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            Nombre = "Corrientes"
+                        },
+                        new
+                        {
+                            ID = 2,
+                            Nombre = "Buenos Aires"
+                        },
+                        new
+                        {
+                            ID = 3,
+                            Nombre = "Mendoza"
+                        },
+                        new
+                        {
+                            ID = 4,
+                            Nombre = "Misiones"
+                        });
                 });
 
             modelBuilder.Entity("ViajerosApp.Models.TipoVehiculo", b =>
@@ -53,7 +75,7 @@ namespace ViajerosApp.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("TipoVehiculos");
+                    b.ToTable("TipoVehiculos", (string)null);
 
                     b.HasData(
                         new
@@ -111,7 +133,7 @@ namespace ViajerosApp.Migrations
 
                     b.HasIndex("TipoVehiculoID");
 
-                    b.ToTable("Vehiculos");
+                    b.ToTable("Vehiculos", (string)null);
                 });
 
             modelBuilder.Entity("ViajerosApp.Models.Viaje", b =>
@@ -148,7 +170,7 @@ namespace ViajerosApp.Migrations
 
                     b.HasIndex("ViajeroID");
 
-                    b.ToTable("Viajes");
+                    b.ToTable("Viajes", (string)null);
                 });
 
             modelBuilder.Entity("ViajerosApp.Models.Viajero", b =>
@@ -165,7 +187,7 @@ namespace ViajerosApp.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Viajeros");
+                    b.ToTable("Viajeros", (string)null);
                 });
 
             modelBuilder.Entity("ViajerosApp.Models.Vehiculo", b =>

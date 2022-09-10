@@ -19,7 +19,7 @@ namespace ViajerosApp.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ViajeDTO>>> Gets()
+        public async Task<ActionResult<IEnumerable<ListViajeDTO>>> Gets()
         {
             var viajes = _viajeService.GetAll();
             if (viajes == null)

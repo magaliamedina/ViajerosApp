@@ -5,7 +5,7 @@ namespace ViajerosApp.Services
 {
     public interface IVehiculoService
     {
-        public IEnumerable<VehiculoDTO> GetAll(); 
+        public IEnumerable<Vehiculo> GetAll(); 
         void Add(VehiculoDTO vehiculo); 
         public Vehiculo Edit(int Id, VehiculoDTO vehiculo); 
         public bool Delete(int id);

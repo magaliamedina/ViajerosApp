@@ -12,8 +12,8 @@ using ViajerosApp.Data;
 namespace ViajerosApp.Migrations
 {
     [DbContext(typeof(ViajerosDbContext))]
-    [Migration("20220910003421_CreateTables")]
-    partial class CreateTables
+    [Migration("20220910141859_createTables")]
+    partial class createTables
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -39,6 +39,28 @@ namespace ViajerosApp.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Ciudades");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            Nombre = "Corrientes"
+                        },
+                        new
+                        {
+                            ID = 2,
+                            Nombre = "Buenos Aires"
+                        },
+                        new
+                        {
+                            ID = 3,
+                            Nombre = "Mendoza"
+                        },
+                        new
+                        {
+                            ID = 4,
+                            Nombre = "Misiones"
+                        });
                 });
 
             modelBuilder.Entity("ViajerosApp.Models.TipoVehiculo", b =>

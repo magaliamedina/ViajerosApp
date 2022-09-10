@@ -5,7 +5,7 @@ namespace ViajerosApp.Services
 {
     public interface IViajeService
     {
-        public IEnumerable<ViajeDTO> GetAll();
+        public IEnumerable<ListViajeDTO> GetAll();
         void Add(ViajeDTO viajeDTO);
         public Viaje Edit(int Id, ViajeDTO viajeDTO);
         public bool Delete(int id);

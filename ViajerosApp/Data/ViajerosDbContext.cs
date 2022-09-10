@@ -38,6 +38,15 @@ namespace ViajerosApp.Data
             modelBuilder.Entity<TipoVehiculo>().HasData(
                    new TipoVehiculo { ID = 6, Descripcion = "Otro" });
 
+            modelBuilder.Entity<Ciudad>().HasData(
+                   new Ciudad { ID = 1, Nombre = "Corrientes" });
+            modelBuilder.Entity<Ciudad>().HasData(
+                   new Ciudad { ID = 2, Nombre = "Buenos Aires" });
+            modelBuilder.Entity<Ciudad>().HasData(
+                   new Ciudad { ID = 3, Nombre = "Mendoza" });
+            modelBuilder.Entity<Ciudad>().HasData(
+                   new Ciudad { ID = 4, Nombre = "Misiones" });
+
             base.OnModelCreating(modelBuilder);
         }
     }
