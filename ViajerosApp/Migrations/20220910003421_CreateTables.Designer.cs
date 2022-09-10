@@ -12,7 +12,7 @@ using ViajerosApp.Data;
 namespace ViajerosApp.Migrations
 {
     [DbContext(typeof(ViajerosDbContext))]
-    [Migration("20220908225018_CreateTables")]
+    [Migration("20220910003421_CreateTables")]
     partial class CreateTables
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -161,16 +161,11 @@ namespace ViajerosApp.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
-                    b.Property<int?>("CiudadID")
-                        .HasColumnType("int");
-
                     b.Property<string>("NombreYApellido")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
-
-                    b.HasIndex("CiudadID");
 
                     b.ToTable("Viajeros");
                 });
@@ -211,15 +206,6 @@ namespace ViajerosApp.Migrations
                     b.Navigation("Vehiculo");
 
                     b.Navigation("Viajero");
-                });
-
-            modelBuilder.Entity("ViajerosApp.Models.Viajero", b =>
-                {
-                    b.HasOne("ViajerosApp.Models.Ciudad", "Ciudad")
-                        .WithMany()
-                        .HasForeignKey("CiudadID");
-
-                    b.Navigation("Ciudad");
                 });
 #pragma warning restore 612, 618
         }

@@ -41,17 +41,11 @@ namespace ViajerosApp.Migrations
                 {
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    NombreYApellido = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CiudadID = table.Column<int>(type: "int", nullable: true)
+                    NombreYApellido = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Viajeros", x => x.ID);
-                    table.ForeignKey(
-                        name: "FK_Viajeros_Ciudades_CiudadID",
-                        column: x => x.CiudadID,
-                        principalTable: "Ciudades",
-                        principalColumn: "ID");
                 });
 
             migrationBuilder.CreateTable(
@@ -130,11 +124,6 @@ namespace ViajerosApp.Migrations
                 column: "TipoVehiculoID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Viajeros_CiudadID",
-                table: "Viajeros",
-                column: "CiudadID");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Viajes_CiudadID",
                 table: "Viajes",
                 column: "CiudadID");
@@ -156,6 +145,9 @@ namespace ViajerosApp.Migrations
                 name: "Viajes");
 
             migrationBuilder.DropTable(
+                name: "Ciudades");
+
+            migrationBuilder.DropTable(
                 name: "Vehiculos");
 
             migrationBuilder.DropTable(
@@ -163,9 +155,6 @@ namespace ViajerosApp.Migrations
 
             migrationBuilder.DropTable(
                 name: "TipoVehiculos");
-
-            migrationBuilder.DropTable(
-                name: "Ciudades");
         }
     }
 }

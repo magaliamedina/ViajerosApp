@@ -24,8 +24,7 @@ namespace ViajerosApp.Services
             {
                 Viajero viajero = new Viajero()
                 {
-                    NombreYApellido = viajeroDTO.NombreYApellido,
-                    CiudadID = viajeroDTO.CiudadID
+                    NombreYApellido = viajeroDTO.NombreYApellido
                 };
                 _viajeroRepository.Add(viajero);
             }

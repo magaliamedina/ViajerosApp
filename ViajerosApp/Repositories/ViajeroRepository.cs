@@ -32,7 +32,7 @@ namespace ViajerosApp.Repositories
 
         public List<Viajero> GetAll()
         {
-            return _context.Viajeros.Include(v => v.Ciudad).ToList();
+            return _context.Viajeros.ToList();
         }
     }
 }
